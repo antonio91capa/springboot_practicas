@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/menu :: head"></head>
+<body>
+	<header th:replace="layout/menu :: header"></header>
+	
+	<div class="container my-4 text-center">
+		<h4>Lo sentimos <span th:text="${#authentication.name}"></span>, no tienes permisos para acceder al recurso</h4>
+		
+		<a th:href="@{/listar}" class="btn btn-outline-light" 
+			role="button" th:text="#{text.security.error.403.volver}">Ir al inicio</a>
+	</div>
+
+	<footer th:replace="layout/menu :: footer"></footer>
+</body>
+</html>
